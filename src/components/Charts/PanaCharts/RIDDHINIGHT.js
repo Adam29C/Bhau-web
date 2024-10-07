@@ -1,11 +1,11 @@
-import { MAINBAZAR } from "./Chart.config";
+import { RIDDHINIGHT} from "./Chart.config";
 import { fa_time } from "../../Helpers/getWeekDays";
 
 import { redJodi } from "../JodiCharts/Chart.config";
 const ShreeDevi = ({ chartData }) => {
   return (
     <div>
-      <table className="table fw-bold" border="collapse">
+       <table className="table fw-bold" border="collapse">
         <thead>
           <tr>
             <th className="cc">Date</th>
@@ -14,11 +14,12 @@ const ShreeDevi = ({ chartData }) => {
             <th className="cc">WED</th>
             <th className="cc">THU</th>
             <th className="cc">FRI</th>
-
+            <th className="cc">SAT</th>
+            <th className="cc">SUN</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(MAINBAZAR).map(([week, days], index) => {
+        {Object.entries(RIDDHINIGHT).map(([week, days], index) => {
             let splitDate = week.split(" ");
 
             return (
@@ -26,9 +27,10 @@ const ShreeDevi = ({ chartData }) => {
                 <td className="cc td-width-13">
                   <div className="pana-chart-main">
                     <span className="result_date">
-                      {fa_time(splitDate[0])} <br />
+                      {week}
+                      {/* {fa_time(splitDate[0])} <br />
                       {splitDate[1]} <br />
-                      {fa_time(splitDate[2])}
+                      {fa_time(splitDate[2])} */}
                     </span>
                   </div>
                 </td>
@@ -114,7 +116,6 @@ const ShreeDevi = ({ chartData }) => {
                 })}
               </tr>
             ))}
-            
         </tbody>
       </table>
     </div>

@@ -25,6 +25,16 @@ import QUEENDAY from "../../Charts/PanaCharts/QUEENDAY";
 import QUEENMORNING from "../../Charts/PanaCharts/QUEENMORNING";
 import QUEENNIGHT from "../../Charts/PanaCharts/QUEENNIGHT";
 
+import RIDDHIDAY from "../../Charts/PanaCharts/RIDDHIDAY";
+import RIDDHIMORNING from "../../Charts/PanaCharts/RIDDHIMORNING";
+import RIDDHINIGHT from "../../Charts/PanaCharts/RIDDHINIGHT";
+
+import SIDDHIDAY from "../../Charts/PanaCharts/SIDDHIDAY";
+import SIDDHIMORNING from "../../Charts/PanaCharts/SIDDHIMORNING";
+import SIDDHINIGHT from "../../Charts/PanaCharts/SIDDHINIGHT";
+
+import SHREEGANESH from "../../Charts/PanaCharts/SHREEGANESH";
+
 import { GetAllCharts } from "../../Helpers/GetCharts";
 import { PagesIndex } from "../../Pages/PagesIndex";
 
@@ -142,6 +152,27 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("QUEENDAY") ? (
                   <QUEENDAY chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("RIDDHIDAY") ? (
+                  <RIDDHIDAY chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("RIDDHINIGHT") ? (
+                  <RIDDHINIGHT chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("RIDDHIMORNING") ? (
+                  <RIDDHIMORNING chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("SIDDHIDAY") ? (
+                  <SIDDHIDAY chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("SIDDHINIGHT") ? (
+                  <SIDDHINIGHT chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("SIDDHIMORNING") ? (
+                  <SIDDHIMORNING chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("SHREEGANESH") ? (
+                  <SHREEGANESH chartData={getData.data} />
                 ) : (
                   ""
                 )}

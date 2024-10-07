@@ -93,38 +93,38 @@ const Section3 = () => {
           <Slider {...settings}>
             <div>
               <div className="custom-card custom-card-padding card-design">
-                <h4 className="">Amit</h4>
-                <h4 className="font-700 ">₹61,000</h4>
+                <h4 className="">Avnit</h4>
+                <h4 className="font-700 ">₹42,500</h4>
               </div>
             </div>
             <div>
               <div className="custom-card card-design">
-                <h4 className="">Priya</h4>
-                <h4 className="font-700 ">₹35,000</h4>
+                <h4 className="">Karishma</h4>
+                <h4 className="font-700 ">₹50,000</h4>
               </div>
             </div>
             <div>
               <div className="custom-card card-design">
-                <h4 className="">Himanshu</h4>
-                <h4 className="font-700 ">₹51,000</h4>
+                <h4 className="">Sunil</h4>
+                <h4 className="font-700 ">₹70,000</h4>
               </div>
             </div>
             <div>
               <div className="custom-card card-design">
-                <h4 className="">Garima</h4>
-                <h4 className="font-700 ">₹25,000</h4>
+                <h4 className="">Akshay</h4>
+                <h4 className="font-700 ">₹80,000</h4>
               </div>
             </div>
             <div>
               <div className="custom-card card-design">
-                <h4 className="">Yash</h4>
-                <h4 className="font-700 ">₹45,200</h4>
+                <h4 className="">Pooja</h4>
+                <h4 className="font-700 ">₹55,200</h4>
               </div>
             </div>
             <div>
               <div className="custom-card card-design">
-                <h4 className="">Ajit</h4>
-                <h4 className="font-700 ">₹45,200</h4>
+                <h4 className="">Karan</h4>
+                <h4 className="font-700 ">₹30,800</h4>
               </div>
             </div>
           </Slider>

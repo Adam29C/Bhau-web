@@ -7498,3 +7498,15 @@ export const redPana = [
   "888",
   "999",
 ];
+
+
+
+export const RIDDHIDAY = []
+export const RIDDHINIGHT = []
+export const RIDDHIMORNING = []
+
+export const SIDDHIDAY = []
+export const SIDDHINIGHT = []
+export const SIDDHIMORNING = []
+
+export const SHREEGANESH = []
