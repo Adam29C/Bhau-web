@@ -4,7 +4,6 @@ import Table from "react-bootstrap/Table";
 
 const CardModel = ({ ModalData, setShow, show ,title}) => {
   const handleClose = () => setShow(false);
-console.log(ModalData,"ModalData")
   return (
     <div>
       <Modal show={show} centered onHide={handleClose} size="lg" >

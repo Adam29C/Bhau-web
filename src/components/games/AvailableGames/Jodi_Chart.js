@@ -9,6 +9,7 @@ import MilanNight from "../../Charts/JodiCharts/MilanNight";
 import RajdhaniDay from "../../Charts/JodiCharts/RajdhaniDay";
 import RajdhaniNight from "../../Charts/JodiCharts/RajdhaniNight";
 import Kalyan from "../../Charts/JodiCharts/Kalyan";
+import KalyanNight from "../../Charts/JodiCharts/KalyanNight";
 import TimeBazar from "../../Charts/JodiCharts/TimeBazar";
 import MainBazar from "../../Charts/JodiCharts/MainBazar";
 import ShreeDevi from "../../Charts/JodiCharts/ShreeDevi";
@@ -57,7 +58,8 @@ const Pana_Chart = () => {
   };
 
   const getResponseData = async () => {
-    const req = nameRejext(location.state.title);
+    const req = location.state;
+    // const req = nameRejext(location.state.title);
     const res = await GetAllCharts(GET_ALL_JODI_CHART, req);
     setgetData(res);
   };
@@ -80,7 +82,7 @@ const Pana_Chart = () => {
                   </strong>
                 </h1>
                 <p className="color-white">
-                  {location.state.title} Pana Chart Satta Matka Record Old
+                  {location.state.title} Jodi Chart Satta Matka Record Old
                   History Historical Data Bracket Results Chart Online Live Book
                   Digits Numbers
                 </p>
@@ -119,7 +121,10 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("KALYAN") ? (
                   <Kalyan chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
+                ): nameRejext(location.state.title) ===
+                nameRejext("KalyanNight") ? (
+                <KalyanNight chartData={getData.data} />
+              ) : nameRejext(location.state.title) ===
                   nameRejext("TIME BAZAR") ? (
                   <TimeBazar chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===

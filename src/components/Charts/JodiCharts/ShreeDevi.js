@@ -1,6 +1,13 @@
 import React from "react";
-import { ShreeDevi , redJodi } from "./Chart.config";
+import { redJodi } from "./Chart.config";
+import { SRIDEVI } from "../PanaCharts/Chart.config";
+import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 const ShreeDay = ({ chartData }) => {
+  const SRIDEVIS = extractTwoDigitNumbers(SRIDEVI);
+
+  console.log("SRIDEVIS" ,SRIDEVIS);
+  
+
   return (
     <div>
        <table className="table fw-bold" border="collapse">
@@ -16,7 +23,7 @@ const ShreeDay = ({ chartData }) => {
           </tr>
         </thead>
         <tbody>
-          {ShreeDevi.map((group, groupIndex) => (
+          {SRIDEVIS.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
                 <td>

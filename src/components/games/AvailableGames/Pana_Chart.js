@@ -13,6 +13,7 @@ import RajdhaniDay from "../../Charts/PanaCharts/RajdhaniDay";
 import RajdhaniNight from "../../Charts/PanaCharts/RajdhaniNight";
 
 import Kalyan from "../../Charts/PanaCharts/Kalyan";
+import KalyanNight from "../../Charts/PanaCharts/KalyanNight";
 
 import TimeBazar from "../../Charts/PanaCharts/TimeBazar";
 import MainBazar from "../../Charts/PanaCharts/MainBazar";
@@ -60,7 +61,7 @@ const Pana_Chart = () => {
   };
 
   const getResponseData = async () => {
-    const req = nameRejext(location.state.title);
+    const req = location.state;
     const res = await GetAllCharts(GET_ALL_GAMES_RESULT, req);
     setgetData(res);
   };
@@ -128,6 +129,9 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("KALYAN") ? (
                   <Kalyan chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("KalyanNight") ? (
+                  <KalyanNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("TIME BAZAR") ? (
                   <TimeBazar chartData={getData.data} />

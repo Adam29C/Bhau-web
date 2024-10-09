@@ -17,42 +17,35 @@ const Charts_Container = ({ title, data, link, responsive_Class }) => {
   return (
     <>
       <div className={responsive_Class}>
-      
-        <h3 
-        className={`charts-main-title text-decoration-underline  ${title === "Jodi Chart" ? "color-white" : ""}`}
+        <h3
+          className={`charts-main-title text-decoration-underline  ${
+            title === "Jodi Chart" ? "color-white" : ""
+          }`}
         >
-          {" "}
           {title}
         </h3>
-    
 
         <div>
           {data &&
             data?.map((data1, index) => (
               <>
-
                 <div className="shadow card rounded border-0 timetable">
                   <div className="card-body" style={{ textAlign: "center" }}>
-           
-                      <h4
-                       className="charts-border-left"
+                    <h4 className="charts-border-left">
+                      <Link
+                        to={Details(link, data1.providerName)}
+                        state={{ title: data1?.providerName, id: data1?._id }}
+                        className="text-decoration-none primary-color"
                       >
-                        <Link
-                          to={Details(link, data1.providerName)}
-                          state={{ title: data1.providerName }}
-                          className="text-decoration-none primary-color"
-                        >
-                          {data1.providerName.toUpperCase()}
-                        </Link>
-                      </h4>
-                  
+                        {data1.providerName.toUpperCase()}
+                      </Link>
+                    </h4>
                   </div>
                 </div>
               </>
             ))}
         </div>
       </div>
- 
     </>
   );
 };

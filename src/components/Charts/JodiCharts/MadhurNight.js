@@ -1,8 +1,11 @@
 import React from "react";
-import { MadhurNight  } from "./Chart.config";
 import { redJodi } from "./Chart.config";
+import { MADHURNIGHT } from "../PanaCharts/Chart.config";
+import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 
 const ShreeDay = ({ chartData }) => {
+  const MadhurNights = extractTwoDigitNumbers(MADHURNIGHT);
+
   return (
     <div>
       <table className="table fw-bold" border="collapse">
@@ -14,11 +17,10 @@ const ShreeDay = ({ chartData }) => {
             <th className="ch">THU</th>
             <th className="ch">FRI</th>
             <th className="ch">SAT</th>
-
           </tr>
         </thead>
         <tbody>
-          {MadhurNight.map((group, groupIndex) => (
+          {MadhurNights.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
                 <td className="cc">
@@ -40,36 +42,34 @@ const ShreeDay = ({ chartData }) => {
             </tr>
           ))}
 
-{chartData &&
-  chartData.map((item1) => {
-    return (
-      <tr key={item1.id}>
-        {item1.data.map((nestedItem) => {
-          const combine = `${
-            nestedItem.relatedData?.[0]?.winningDigitFamily}${nestedItem.relatedData?.[1]?.winningDigitFamily}`;
-          return (
-            <td key={nestedItem.id}>
-              <div className="kalyan-chart-number-black">
-                <span
-                  className={`cp ${
-                    redJodi
-                      .map((j) => parseInt(j))
-                      .includes(parseInt(combine))
-                      ? "text-danger"
-                      : "text-dark"
-                  }`}
-                >
-                  {nestedItem.relatedData?.[0]?.winningDigitFamily}
-                  {nestedItem.relatedData?.[1]?.winningDigitFamily}
-                </span>
-              </div>
-            </td>
-          );
-        })}
-      </tr>
-    );
-  })}
-
+          {chartData &&
+            chartData.map((item1) => {
+              return (
+                <tr key={item1.id}>
+                  {item1.data.map((nestedItem) => {
+                    const combine = `${nestedItem.relatedData?.[0]?.winningDigitFamily}${nestedItem.relatedData?.[1]?.winningDigitFamily}`;
+                    return (
+                      <td key={nestedItem.id}>
+                        <div className="kalyan-chart-number-black">
+                          <span
+                            className={`cp ${
+                              redJodi
+                                .map((j) => parseInt(j))
+                                .includes(parseInt(combine))
+                                ? "text-danger"
+                                : "text-dark"
+                            }`}
+                          >
+                            {nestedItem.relatedData?.[0]?.winningDigitFamily}
+                            {nestedItem.relatedData?.[1]?.winningDigitFamily}
+                          </span>
+                        </div>
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

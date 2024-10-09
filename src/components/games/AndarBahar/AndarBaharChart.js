@@ -48,53 +48,56 @@ const Andar_Bahar_Chart = (props) => {
   };
 
   const getResponseData = async () => {
-    const req = nameRejext(location.state.title);
+
+    const req = location.state;
+
+    // const req = nameRejext(location.state.title);
     const res = await GetAllCharts(GET_JACKPOT_JODI_CHART, req);
     setgetData(res);
 
-    if (res.status) {
-      const convertedData = {
-        data: [],
-      };
+    // if (res.status) {
+    //   const convertedData = {
+    //     data: [],
+    //   };
 
-      res.data.forEach((weekData) => {
-        const resultDates = weekData.data.map(
-          (item) => new Date(item.resultDate)
-        );
+    //   res.data.forEach((weekData) => {
+    //     const resultDates = weekData.data.map(
+    //       (item) => new Date(item.resultDate)
+    //     );
 
-        const week = {
-          weekStartDay: getActualDateFormate(weekData.startDate),
-          weekEndDay: getActualDateFormate(weekData.endDate),
-          data: [],
-        };
+    //     const week = {
+    //       weekStartDay: getActualDateFormate(weekData.startDate),
+    //       weekEndDay: getActualDateFormate(weekData.endDate),
+    //       data: [],
+    //     };
 
-        let currentResultDate = "";
-        let relatedData = [];
+    //     let currentResultDate = "";
+    //     let relatedData = [];
 
-        weekData.data.forEach((item) => {
-          if (item.resultDate !== currentResultDate) {
-            if (currentResultDate !== "") {
-              week.data.push({
-                resultDate: currentResultDate,
-                relatedData: relatedData,
-              });
-            }
-            currentResultDate = item.resultDate;
-            relatedData = [];
-          }
-          relatedData.push(item);
-        });
+    //     weekData.data.forEach((item) => {
+    //       if (item.resultDate !== currentResultDate) {
+    //         if (currentResultDate !== "") {
+    //           week.data.push({
+    //             resultDate: currentResultDate,
+    //             relatedData: relatedData,
+    //           });
+    //         }
+    //         currentResultDate = item.resultDate;
+    //         relatedData = [];
+    //       }
+    //       relatedData.push(item);
+    //     });
 
-        week.data.push({
-          resultDate: currentResultDate,
-          relatedData: relatedData,
-        });
+    //     week.data.push({
+    //       resultDate: currentResultDate,
+    //       relatedData: relatedData,
+    //     });
 
-        convertedData.data.push(week);
-      });
+    //     convertedData.data.push(week);
+    //   });
 
-      setgetData(convertedData);
-    }
+    //   setgetData(convertedData);
+    // }
   };
   PagesIndex.useEffect(() => {
     getResponseData();
@@ -142,29 +145,29 @@ const Andar_Bahar_Chart = (props) => {
         <div className="row justify-content-center ">
           <div className="p-0 text-center d-flex justify-content-center   col-xl-12 col-q-12 col-md-12 col-sm-12 ">
             <div className="table-responsive  text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 ">
-              {nameRejext(location.state.title) === nameRejext("7:30PM") ? (
+              {nameRejext(location.state.title) === nameRejext("7:00PM") ? (
                 <ShreeDay chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("8:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("8:00PM") ? (
                 <ShreeNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("12:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("12:00PM") ? (
                 <MadhurDay chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("1:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("1:00PM") ? (
                 <MadhurNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("3:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("3:00PM") ? (
                 <MilanDay chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("4:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("4:00PM") ? (
                 <MilanNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("5:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("5:00PM") ? (
                 <RajdhaniDay chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("6:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("6:00PM") ? (
                 <RajdhaniNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("10:30Am") ? (
+              ) : nameRejext(location.state.title) === nameRejext("10:00Am") ? (
                 <Kalyan chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("11:30Am") ? (
+              ) : nameRejext(location.state.title) === nameRejext("11:00Am") ? (
                 <KalyanNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("9:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("9:00PM") ? (
                 <TimeBazar chartData={getData.data} />
-              ) : nameRejext(location.state.title) === nameRejext("2:30PM") ? (
+              ) : nameRejext(location.state.title) === nameRejext("2:00PM") ? (
                 <MainBazar chartData={getData.data} />
               ) : (
                 ""

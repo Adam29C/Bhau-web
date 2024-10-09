@@ -1,6 +1,10 @@
 import React from "react";
 import { TimeBazar  ,redJodi} from "./Chart.config";
+import { TIMEBAZAR } from "../PanaCharts/Chart.config";
+import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 const ShreeDay = ({ chartData }) => {
+  const TIMEBAZARS = extractTwoDigitNumbers(TIMEBAZAR);
+
   return (
     <div>
       <table className="table fw-bold" border="collapse">
@@ -16,7 +20,7 @@ const ShreeDay = ({ chartData }) => {
           </tr>
         </thead>
         <tbody>
-          {TimeBazar.map((group, groupIndex) => (
+          {TIMEBAZARS.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
                 <td>

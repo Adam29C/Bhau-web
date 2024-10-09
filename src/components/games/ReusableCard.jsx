@@ -8,17 +8,16 @@ import { downloadAPK } from "../Helpers/DownloadAPK";
 import CardModel from "../Helpers/CardModel";
 
 const Section4 = ({ GameData, title, showPana }) => {
-
   const [AppUrl, setAppUrl] = useState("");
   const [ModalData, setModalData] = useState([]);
   const [show, setShow] = useState(false);
   const [RowData, setRowData] = useState([]);
-console.log(RowData)
-const handleOpenCardModel =(row)=>{
-  setRowData(row.providerName.toUpperCase())
-  setModalData(row?.gameDetails?.[0])
-  setShow(true);
-}
+  console.log(RowData);
+  const handleOpenCardModel = (row) => {
+    setRowData(row.providerName.toUpperCase());
+    setModalData(row?.gameDetails?.[0]);
+    setShow(true);
+  };
   const getResponseData = async () => {
     const res = await GET_ALL_GAMES();
     if (res.status) {
@@ -73,7 +72,10 @@ const handleOpenCardModel =(row)=>{
                 <div key={index} className="col-xl-4 col-lg-4 col-md-12 mb-3">
                   <div className="second-card ">
                     <div className="second-card-image-main">
-                      <img src={cardImage} onClick={()=>handleOpenCardModel(data)}/>
+                      <img
+                        src={cardImage}
+                        onClick={() => handleOpenCardModel(data)}
+                      />
                     </div>
 
                     <div className="top-sec second-card-top-sec d-flex justify-content-between align-items-center ">
@@ -116,7 +118,24 @@ const handleOpenCardModel =(row)=>{
                             downloadFile(showData(data?.gameDetails)?.message)
                           }
                         >
-                          <svg
+                          {showData(data?.gameDetails)?.message ===
+                          "Close for today" ? (
+                            <img
+                              src="images/gameclose.png"
+                              className="play_icon_class "
+                              alt=""
+                              srcset=""
+                            />
+                          ) : (
+                            <img
+                              src="images/gameon.png"
+                              className="play_icon_class zoom-in-zoom-out"
+                              alt=""
+                              srcset=""
+                            />
+                          )}
+
+                          {/* <svg
                             id="video"
                             xmlns="http://www.w3.org/2000/svg"
                             width="50"
@@ -182,7 +201,7 @@ const handleOpenCardModel =(row)=>{
                                 ></path>
                               </g>
                             </g>
-                          </svg>
+                          </svg> */}
                         </a>
                       </div>
                     </div>
@@ -192,7 +211,7 @@ const handleOpenCardModel =(row)=>{
                           to={`/pana-chart/${data?.providerName
                             .toLowerCase()
                             .replace(/\s+/g, "")}/pana-chart`}
-                          state={{ title: data?.providerName }}
+                            state={{ title: data?.providerName , id :data?._id  }}
                           className="chat-btn a-tag-css"
                         >
                           <span>Pana Chart</span>
@@ -204,7 +223,7 @@ const handleOpenCardModel =(row)=>{
                         to={`/jodi-chart/${data?.providerName
                           .toLowerCase()
                           .replace(/\s+/g, "")}/jodi-chart`}
-                        state={{ title: data?.providerName }}
+                          state={{ title: data?.providerName , id :data?._id  }}
                         className="chat-btn a-tag-css ml-10px"
                       >
                         <span>Jodi Chart</span>
@@ -236,7 +255,12 @@ const handleOpenCardModel =(row)=>{
 
       {/* .................................................. */}
 
-<CardModel ModalData={ModalData} setShow={setShow} show={show} title={RowData}/>
+      <CardModel
+        ModalData={ModalData}
+        setShow={setShow}
+        show={show}
+        title={RowData}
+      />
     </>
   );
 };

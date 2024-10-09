@@ -11,7 +11,7 @@ const StartLine = () => {
   const [ModalData, setModalData] = PagesIndex.useState([]);
   const [RowData, setRowData] = PagesIndex.useState([]);
   const [show, setShow] = PagesIndex.useState(false);
-  
+
   const getResponseData = async () => {
     const res = await GET_ALL_JACKPOT_GAME();
     if (res.status) {
@@ -23,12 +23,11 @@ const StartLine = () => {
     getResponseData();
   }, []);
 
-  const handleOpenCardModel =(row)=>{
-    setRowData(row.providerName.toUpperCase())
-    setModalData(row?.gameDetails?.[0])
+  const handleOpenCardModel = (row) => {
+    setRowData(row.providerName.toUpperCase());
+    setModalData(row?.gameDetails?.[0]);
     setShow(true);
-  }
-
+  };
 
   const showData = (data) => {
     const weekday = [
@@ -55,14 +54,12 @@ const StartLine = () => {
     }
   };
 
-  const downloadFile = async() => {
-    await downloadAPK()
-
+  const downloadFile = async () => {
+    await downloadAPK();
   };
   return (
     <div>
       <div className="available-component">
-   
         <div className="heding-sec heading-sec-custom m-2 d-flex text-center justify-content-center align-items-center">
           <img src={star} alt="" />
           <h1 className="mb-3 mt-3 ms-2 me-2 font-700">JACKPOT</h1>
@@ -78,22 +75,30 @@ const StartLine = () => {
               return (
                 <div key={index} className="col-xl-4 col-lg-4 col-md-12  mb-3">
                   <div className="second-card">
-                  <div className="second-card-image-main">
-                      <img src={cardImage} onClick={()=>handleOpenCardModel(data)}/>
+                    <div className="second-card-image-main">
+                      <img
+                        src={cardImage}
+                        onClick={() => handleOpenCardModel(data)}
+                      />
                     </div>
                     <div className="top-sec second-card-top-sec d-flex justify-content-between align-items-center">
                       <div className="card-text">
                         <div className="card-text-main set-margin">
                           <h4 className="primary-color font-700 ">
                             {data.providerName.toUpperCase()}
-                     
-                  
                           </h4>
                           <h3 className="font-700 ">{data.providerResult}</h3>
-                         
+
                           <h6
-                    
-                            className={`mb-1 ${getmsg == "Close for today"  ? "close-for-today"  : getmsg == "Betting is running for close"  ? "betting-closed": getmsg == "Betting is running for open" ? "default-message":"default-message"}`}
+                            className={`mb-1 ${
+                              getmsg == "Close for today"
+                                ? "close-for-today"
+                                : getmsg == "Betting is running for close"
+                                ? "betting-closed"
+                                : getmsg == "Betting is running for open"
+                                ? "default-message"
+                                : "default-message"
+                            }`}
                           >
                             {getmsg}
                           </h6>
@@ -101,21 +106,33 @@ const StartLine = () => {
                       </div>
                       <div
                         className={`play-icon  ${
-                          getmsg ==
-                            "Close for today"
-                            ? ""
-                            : "zoom-in-zoom-out"
+                          getmsg == "Close for today" ? "" : "zoom-in-zoom-out"
                         } `}
                       >
-                 
-
                         <a
                           href="#"
                           onClick={() =>
                             downloadFile(showData(data?.gameDetails)?.message)
                           }
                         >
-                          <svg
+                          {showData(data?.gameDetails)?.message ===
+                          "Close for today" ? (
+                            <img
+                              src="images/gameclose.png"
+                              className="play_icon_class "
+                              alt=""
+                              srcset=""
+                            />
+                          ) : (
+                            <img
+                              src="images/gameon.png"
+                              className="play_icon_class zoom-in-zoom-out"
+                              alt=""
+                              srcset=""
+                            />
+                          )}
+
+                          {/* <svg
                             id="video"
                             xmlns="http://www.w3.org/2000/svg"
                             width="50"
@@ -181,7 +198,7 @@ const StartLine = () => {
                                 ></path>
                               </g>
                             </g>
-                          </svg>
+                          </svg> */}
                         </a>
                       </div>
                     </div>
@@ -190,9 +207,8 @@ const StartLine = () => {
                         to={`/andarbahar/${data.providerName
                           .toLowerCase()
                           .replace(/\s+/g, "")}`}
-                        state={{ title: data.providerName }}
+                        state={{ title: data?.providerName, id: data._id }}
                         className="chat-btn a-tag-css"
-                        
                       >
                         <span>Jodi Chart</span>
                       </PagesIndex.Link>
@@ -220,12 +236,15 @@ const StartLine = () => {
             })}
           </div>
         </div>
-        <CardModel ModalData={ModalData} setShow={setShow} show={show} title={RowData}/>
-
+        <CardModel
+          ModalData={ModalData}
+          setShow={setShow}
+          show={show}
+          title={RowData}
+        />
       </div>
     </div>
   );
 };
 
 export default StartLine;
-

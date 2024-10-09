@@ -118,7 +118,25 @@ const StartLine = () => {
                           downloadFile(showData(data?.gameDetails)?.message)
                         }
                       >
-                        <svg
+
+{showData(data?.gameDetails)?.message ===
+                          "Close for today" ? (
+                            <img
+                              src="images/gameclose.png"
+                              className="play_icon_class "
+                              alt=""
+                              srcset=""
+                            />
+                          ) : (
+                            <img
+                              src="images/gameon.png"
+                              className="play_icon_class zoom-in-zoom-out"
+                              alt=""
+                              srcset=""
+                            />
+                          )}
+
+                        {/* <svg
                           id="video"
                           xmlns="http://www.w3.org/2000/svg"
                           width="50"
@@ -184,7 +202,7 @@ const StartLine = () => {
                               ></path>
                             </g>
                           </g>
-                        </svg>
+                        </svg> */}
                       </a>
                     </div>
                   </div>
@@ -193,7 +211,7 @@ const StartLine = () => {
                       to={`/starline/${data?.providerName
                         .toLowerCase()
                         .replace(/\s+/g, "")}`}
-                      state={{ title: data?.providerName }}
+                        state={{ title: data?.providerName , id :data._id  }}
                       className="chat-btn"
                       style={{ textDecoration: "none" }}
                     >

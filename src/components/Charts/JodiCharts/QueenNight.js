@@ -1,6 +1,10 @@
 import React from "react";
 import { QueenNight  ,redJodi } from "./Chart.config";
+import { QUEENNIGHT } from "../PanaCharts/Chart.config";
+import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 const ShreeDay = ({ chartData }) => {
+  const QUEENNIGHTs = extractTwoDigitNumbers(QUEENNIGHT);
+
   return (
     <div>
        <table className="table fw-bold" border="collapse">
@@ -16,7 +20,7 @@ const ShreeDay = ({ chartData }) => {
           </tr>
         </thead>
         <tbody>
-          {QueenNight.map((group, groupIndex) => (
+          {QUEENNIGHTs.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
                 <td>

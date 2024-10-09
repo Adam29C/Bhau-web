@@ -1,6 +1,15 @@
 import React from "react";
-import { RIDDHIMORNING  ,redJodi} from "./Chart.config";
+import { redJodi} from "./Chart.config";
+import { RIDDHIMORNING } from "../PanaCharts/Chart.config";
+import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
+
+
 const ShreeDay = ({ chartData }) => {
+
+const RIDDHIMORNINGs = extractTwoDigitNumbers(RIDDHIMORNING);
+
+
+
   return (
     <div>
       <table className="table fw-bold" border="collapse">
@@ -12,11 +21,13 @@ const ShreeDay = ({ chartData }) => {
             <th className="ch">THU</th>
             <th className="ch">FRI</th>
             <th className="ch">SAT</th>
+            <th className="ch">SUN</th>
+
 
           </tr>
         </thead>
         <tbody>
-          {RIDDHIMORNING.map((group, groupIndex) => (
+          {RIDDHIMORNINGs.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
                 <td>

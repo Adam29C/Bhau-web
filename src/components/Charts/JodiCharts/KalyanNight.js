@@ -1,13 +1,15 @@
 import React from "react";
-import { MayaMorning , redJodi} from "./Chart.config";
-import { MAYAMORNING } from "../PanaCharts/Chart.config";
+import { KALYANNIGHT } from "../PanaCharts/Chart.config";
+import { redJodi } from "./Chart.config";
 import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
+
 const ShreeDay = ({ chartData }) => {
-  const MAYAMORNINGS = extractTwoDigitNumbers(MAYAMORNING);
+  const KALYANNIGHTs = extractTwoDigitNumbers(KALYANNIGHT);
+
 
   return (
     <div>
-   <table className="table fw-bold" border="collapse">
+      <table className="table fw-bold" border="collapse">
         <thead>
           <tr>
             <th className="ch">MON</th>
@@ -15,15 +17,14 @@ const ShreeDay = ({ chartData }) => {
             <th className="ch">WED</th>
             <th className="ch">THU</th>
             <th className="ch">FRI</th>
-            <th className="ch">SAT</th>
-            <th className="ch">SUN</th>
+          
           </tr>
         </thead>
         <tbody>
-          {MAYAMORNINGS.map((group, groupIndex) => (
+          {KALYANNIGHTs.map((group, groupIndex) => (
             <tr key={groupIndex}>
               {group.map((item) => (
-                <td>
+                <td className="cc">
                   <div className="kalyan-chart-number-black">
                     <span
                       className={`cp ${
@@ -42,7 +43,7 @@ const ShreeDay = ({ chartData }) => {
             </tr>
           ))}
 
-         
+     
 {chartData &&
   chartData.map((item1) => {
     return (

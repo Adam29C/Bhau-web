@@ -46,7 +46,9 @@ const Pana_Chart = () => {
   };
 
   const getResponseData = async () => {
-    const req = nameRejext(location.state.title);
+
+    const req = location.state;
+    // const req = nameRejext(location.state.title);
     const res = await GetAllCharts(GET_ALL_STARLINE_GAME_PANA_CHART, req);
     setgetData(res);
 
@@ -135,40 +137,40 @@ const Pana_Chart = () => {
           <div className="row justify-content-center ">
             <div className="p-0 text-center d-flex justify-content-center   col-xl-12 col-q-12 col-md-12 col-sm-12  ">
               <div className="table-responsive  text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 ">
-                {nameRejext(location.state.title) === nameRejext("7:00PM") ? (
+                {nameRejext(location.state.title) === nameRejext("7:30PM") ? (
                   <ShreeDay chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("8:00PM") ? (
+                  nameRejext("8:30PM") ? (
                   <ShreeNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("12:00PM") ? (
+                  nameRejext("12:30PM") ? (
                   <MadhurDay chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("1:00PM") ? (
+                  nameRejext("1:30PM") ? (
                   <MadhurNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("3:00PM") ? (
+                  nameRejext("3:30PM") ? (
                   <MilanDay chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("4:00PM") ? (
+                  nameRejext("4:30PM") ? (
                   <MilanNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("5:00PM") ? (
+                  nameRejext("5:30PM") ? (
                   <RajdhaniDay chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("6:00PM") ? (
+                  nameRejext("6:30PM") ? (
                   <RajdhaniNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("10:00Am") ? (
+                  nameRejext("10:30Am") ? (
                   <Kalyan chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("11:00Am") ? (
+                  nameRejext("11:30Am") ? (
                   <KalyanNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("9:00PM") ? (
+                  nameRejext("9:30PM") ? (
                   <TimeBazar chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("2:00PM") ? (
+                  nameRejext("2:30PM") ? (
                   <MainBazar chartData={getData.data} />
                 ) : (
                   ""
