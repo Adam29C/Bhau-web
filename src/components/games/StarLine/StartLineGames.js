@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GET_ALL_STARLINE_GAME_PANA_CHART } from "../../service/admin.service";
 import Navbar from "../../Pages/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
-import Footer from "../../Pages/Footer/Footer";
+import Footer from "../../Pages/Footer/Footer_2";
 import { getActualDateFormate } from "../../Helpers/getWeekDays";
 import { nameRejext } from "../../Helpers/StringRejex";
 
@@ -23,7 +23,9 @@ import KalyanNight from "../../Charts/starLinePanaChart/11Am";
 
 import TimeBazar from "../../Charts/starLinePanaChart/9PM";
 import MainBazar from "../../Charts/starLinePanaChart/2PM";
+import AllStarline from "../../Charts/starLinePanaChart/AllStarline"
 import { GetAllCharts } from "../../Helpers/GetCharts";
+
 const Pana_Chart = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -47,53 +49,14 @@ const Pana_Chart = () => {
 
   const getResponseData = async () => {
 
+    
+    if (location.state.title != "allstarline") {
+    // const req = location.state.id;
     const req = location.state;
-    // const req = nameRejext(location.state.title);
-    const res = await GetAllCharts(GET_ALL_STARLINE_GAME_PANA_CHART, req);
-    setgetData(res);
 
-    if (res.status) {
-      const convertedData = {
-        data: [],
-      };
 
-      res.data.forEach((weekData) => {
-        const resultDates = weekData.data.map(
-          (item) => new Date(item.resultDate)
-        );
-
-        const week = {
-          weekStartDay: getActualDateFormate(weekData.startDate),
-          weekEndDay: getActualDateFormate(weekData.endDate),
-          data: [],
-        };
-
-        let currentResultDate = "";
-        let relatedData = [];
-
-        weekData.data.forEach((item) => {
-          if (item.resultDate !== currentResultDate) {
-            if (currentResultDate !== "") {
-              week.data.push({
-                resultDate: currentResultDate,
-                relatedData: relatedData,
-              });
-            }
-            currentResultDate = item.resultDate;
-            relatedData = [];
-          }
-          relatedData.push(item);
-        });
-
-        week.data.push({
-          resultDate: currentResultDate,
-          relatedData: relatedData,
-        });
-
-        convertedData.data.push(week);
-      });
-
-      setgetData(convertedData);
+      const res = await GetAllCharts(GET_ALL_STARLINE_GAME_PANA_CHART, req);
+      setgetData(res);
     }
   };
   useEffect(() => {
@@ -172,6 +135,8 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("2:30PM") ? (
                   <MainBazar chartData={getData.data} />
+                ): nameRejext(location.state.title) === nameRejext("allstarline") ? (
+                  <AllStarline chartData={getData.data} />
                 ) : (
                   ""
                 )}

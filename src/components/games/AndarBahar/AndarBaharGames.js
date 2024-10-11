@@ -207,7 +207,7 @@ const StartLine = () => {
                         to={`/andarbahar/${data.providerName
                           .toLowerCase()
                           .replace(/\s+/g, "")}`}
-                        state={{ title: data?.providerName, id: data._id }}
+                        state={{ title: data?.providerName, id: data?._id }}
                         className="chat-btn a-tag-css"
                       >
                         <span>Jodi Chart</span>
@@ -223,7 +223,7 @@ const StartLine = () => {
                         </strong>
                       </span>
                       <span>
-                        Close Bids :{" "}
+                        Close Bids :
                         <strong>
                           {showData(data?.gameDetails) != undefined &&
                             showData(data?.gameDetails)?.CBT}

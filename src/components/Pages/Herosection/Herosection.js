@@ -1,5 +1,5 @@
 import { downloadAPK } from "../../Helpers/DownloadAPK";
-import menimage from "../../../images/bhau-images/Men Image.svg";
+import menimage from "../../../images/bhau-images/money-man.png";
 import countingimage from "../../../images/bhau-images/Counting.svg";
 
 const Section2 = () =>{

@@ -48,18 +48,18 @@ const Charts = () => {
             </div>
           ) : (
             <div className="row chart-row">
-              <Jodi_Chart title="Jodi Chart" data={getChart} link="jodi" />
-              <Pana_Chart title="Pana Chart" data={getChart} link="pana" />
+              {/* <Jodi_Chart title="Jodi Chart" data={getChart} link="jodi" />
+              <Pana_Chart title="Pana Chart" data={getChart} link="pana" /> */}
               <Shree_Starline
                 title="Starline"
                 data={getStarline}
                 link="starline"
               />
-              <Shree_Jackpot
+              {/* <Shree_Jackpot
                 title="Jackpot"
                 data={getJackpot}
                 link="jackpot"
-              />
+              /> */}
             </div>
           )}
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer_2";
 import { GET_CONTACT } from "../../service/admin.service";
 import HomeImagePage from "../../Helpers/HomeImagePage";
 

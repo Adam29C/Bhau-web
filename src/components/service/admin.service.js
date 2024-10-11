@@ -183,3 +183,39 @@ export async function GET_ALL_STARTLINE_GAMES_CHART(data, token) {
     return err;
   }
 }
+
+
+
+// GET ALL  JACKPOT_GAME CHART
+export async function GET_ALL_JACKPOT_JODI_CHART(data, token) {
+  try {
+    const res = await axios.get(
+      `${Config.base_url}api/web/jackpot_jodi_chart/all`,
+      data,
+      {
+        data: {},
+      }
+    );
+    return await res?.data;
+  } catch (err) {
+    return err;
+  }
+}
+
+
+// ALL  JACKPOT_GAME CHART
+
+export async function GET_ALL_STARLINE_PANA_CHART(data, token) {
+  try {
+    const res = await axios.get(
+      `${Config.base_url}api/web/startline_pana_chart/all`,
+      data,
+      {
+        data: {},
+      }
+    );
+    return await res?.data;
+  } catch (err) {
+    return err;
+  }
+}

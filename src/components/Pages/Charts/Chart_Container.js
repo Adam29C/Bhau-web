@@ -25,6 +25,39 @@ const Charts_Container = ({ title, data, link, responsive_Class }) => {
           {title}
         </h3>
 
+        {title === "Starline" || title === "Jackpot" ? (
+          <>
+            <div className="shadow card rounded border-0 timetable">
+              <div className="card-body" style={{ textAlign: "center" }}>
+                <h4 className="charts-border-left">
+                <Link
+                  to={
+                    title === "Starline"
+                      ? "/starline/allstarline"
+                      : "/andarbahar/alljackpot"
+                  }
+                  className="text-decoration-none primary-color"
+                  state={{
+                    title:
+                      title === "Starline"
+                        ? "allstarline"
+                        : "alljackpot",
+                  }}
+                >
+                  {/* {data1.providerName.toUpperCase()} */}
+                  {title === "Starline"
+                    ? "ALL STARLINE CHART"
+                    : "ALL JACKPOT CHART"}
+                </Link>
+              </h4>
+
+              </div>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
         <div>
           {data &&
             data?.map((data1, index) => (

@@ -1,6 +1,6 @@
 import { GET_ALL_GAMES_RESULT } from "../../service/admin.service";
 import Navbar from "../../Pages/Navbar/Navbar";
-import Footer from "../../Pages/Footer/Footer";
+import Footer from "../../Pages/Footer/Footer_2";
 import { nameRejext } from "../../Helpers/StringRejex";
 
 import MadhurDay from "../../Charts/PanaCharts/MadhurDay";

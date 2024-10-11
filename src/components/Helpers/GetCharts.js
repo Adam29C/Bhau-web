@@ -3,8 +3,12 @@ import { fa_time } from "./getWeekDays";
 
 export const GetAllCharts = async (apiEndPOint, data) => {
   const req = nameRejext(data.title);
+  
 
-  const res = await apiEndPOint({ name: req  , id :data.id });
+  const res = await apiEndPOint({ name: req  , id :data.id});
+
+
+  
   if (res.status) {
     const convertedData = {
       data: [],

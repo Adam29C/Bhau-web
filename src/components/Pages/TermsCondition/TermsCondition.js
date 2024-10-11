@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer_2";
 import HomeImagePage from "../../Helpers/HomeImagePage";
 
 const TermsCondition = () => {

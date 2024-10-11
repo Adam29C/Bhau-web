@@ -15,7 +15,7 @@ const Wraper = () => {
     <HomeImagePage>
         <Section2 />
         </HomeImagePage>
-       <Section3 />
+       {/* <Section3 /> */}
       <GameRateSection />
       <AvailableGames />
       <StartLine />
