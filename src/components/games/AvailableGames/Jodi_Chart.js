@@ -16,11 +16,9 @@ import ShreeDevi from "../../Charts/JodiCharts/ShreeDevi";
 import ShreeDeviNight from "../../Charts/JodiCharts/ShreeDeviNight";
 import MayaMorning from "../../Charts/JodiCharts/MayaMorning";
 
-import QueenDay from "../../Charts/JodiCharts/QueenDay";
-import QueenMorning from "../../Charts/JodiCharts/QueenMorning";
-import QueenNight from "../../Charts/JodiCharts/QueenNight";
-
-
+// import QueenDay from "../../Charts/JodiCharts/QueenDay";
+// import QueenMorning from "../../Charts/JodiCharts/QueenMorning";
+// import QueenNight from "../../Charts/JodiCharts/QueenNight";
 
 import RIDDHIDAY from "../../Charts/JodiCharts/RIDDHIDAY";
 import RIDDHIMORNING from "../../Charts/JodiCharts/RIDDHIMORNING";
@@ -31,8 +29,6 @@ import SIDDHIMORNING from "../../Charts/JodiCharts/SIDDHIMORNING";
 import SIDDHINIGHT from "../../Charts/JodiCharts/SIDDHINIGHT";
 
 import SHREEGANESH from "../../Charts/JodiCharts/SHREEGANESH";
-
-
 
 import { GetAllCharts } from "../../Helpers/GetCharts";
 import { PagesIndex } from "../../Pages/PagesIndex";
@@ -121,10 +117,10 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("KALYAN") ? (
                   <Kalyan chartData={getData.data} />
-                ): nameRejext(location.state.title) ===
-                nameRejext("KalyanNight") ? (
-                <KalyanNight chartData={getData.data} />
-              ) : nameRejext(location.state.title) ===
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("KalyanNight") ? (
+                  <KalyanNight chartData={getData.data} />
+                ) : nameRejext(location.state.title) ===
                   nameRejext("TIME BAZAR") ? (
                   <TimeBazar chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
@@ -139,15 +135,6 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("sridevinight") ? (
                   <ShreeDeviNight chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QueenDay") ? (
-                  <QueenDay chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QueenMorning") ? (
-                  <QueenMorning chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QueenNight") ? (
-                  <QueenNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("MadhurNight") ? (
                   <MadhurNight chartData={getData.data} />

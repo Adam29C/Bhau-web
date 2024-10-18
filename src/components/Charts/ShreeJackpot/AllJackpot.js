@@ -5,6 +5,7 @@ import { redJodi } from "../JodiCharts/Chart.config";
 import { fa_time } from "../../Helpers/getWeekDays";
 
 const ShreeDay = () => {
+  
   const [chartData, setchartData] = useState([]);
 
   const getData = async () => {

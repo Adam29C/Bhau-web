@@ -22,10 +22,6 @@ import ShreeDevi from "../../Charts/PanaCharts/ShreeDevi";
 import ShreeDeviNight from "../../Charts/PanaCharts/ShreeDeviNight";
 import MayaMorning from "../../Charts/PanaCharts/MayaMorning";
 
-import QUEENDAY from "../../Charts/PanaCharts/QUEENDAY";
-import QUEENMORNING from "../../Charts/PanaCharts/QUEENMORNING";
-import QUEENNIGHT from "../../Charts/PanaCharts/QUEENNIGHT";
-
 import RIDDHIDAY from "../../Charts/PanaCharts/RIDDHIDAY";
 import RIDDHIMORNING from "../../Charts/PanaCharts/RIDDHIMORNING";
 import RIDDHINIGHT from "../../Charts/PanaCharts/RIDDHINIGHT";
@@ -147,15 +143,6 @@ const Pana_Chart = () => {
                 ) : nameRejext(location.state.title) ===
                   nameRejext("MayaMorning") ? (
                   <MayaMorning chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QUEENNIGHT") ? (
-                  <QUEENNIGHT chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QUEENMORNING") ? (
-                  <QUEENMORNING chartData={getData.data} />
-                ) : nameRejext(location.state.title) ===
-                  nameRejext("QUEENDAY") ? (
-                  <QUEENDAY chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("RIDDHIDAY") ? (
                   <RIDDHIDAY chartData={getData.data} />

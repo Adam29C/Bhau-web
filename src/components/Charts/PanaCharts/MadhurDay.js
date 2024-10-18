@@ -27,9 +27,10 @@ const ShreeDevi = ({ chartData }) => {
                 <td className="cc td-width-13">
                   <div className="pana-chart-main">
                     <span className="result_date">
-                      {fa_time(splitDate[0])} <br/>
+                      {/* {fa_time(splitDate[0])} <br/>
                       {splitDate[1]} <br/>
-                      {fa_time(splitDate[2])}
+                      {fa_time(splitDate[2])} */}
+                      {week}
                     </span>
                   </div>
                 </td>
