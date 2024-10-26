@@ -135,7 +135,7 @@ const Andar_Bahar_Chart = (props) => {
                   nameRejext("11:00Am") ? (
                   <KalyanNight chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("9:30PM") ? (
+                  nameRejext("9:00PM") ? (
                   <TimeBazar chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("2:00PM") ? (
