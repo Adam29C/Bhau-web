@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c01c6737.css",
-    "main.js": "/static/js/main.70664037.js",
+    "main.js": "/static/js/main.0c997042.js",
     "static/media/money-man.png": "/static/media/money-man.51040cf7d2b0158fbb9c.png",
     "static/media/Counting.svg": "/static/media/Counting.e48125d2b39770444f7b9fe5d87dc66d.svg",
     "static/media/gamble Therapy.svg": "/static/media/gamble Therapy.64b10d3ea5e9741edf1232366014cc61.svg",
@@ -9,8 +9,8 @@
     "static/media/Logo for green background.svg": "/static/media/Logo for green background.356238d854e0b4f9a55671411b85cb30.svg",
     "static/media/Logo for white background.svg": "/static/media/Logo for white background.19c1a39f1c44f31b5225dff858bcc2df.svg",
     "static/media/card-top-image.svg": "/static/media/card-top-image.d33aba8715c9cd9bece48a111cfcaf86.svg",
-    "index.html": "/index.html",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "index.html": "/index.html",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/18+.svg": "/static/media/18+.d170e20474bf0995a18a6480c6ff1a23.svg",
@@ -22,10 +22,10 @@
     "static/media/Herro Banner.svg": "/static/media/Herro Banner.f0c1871ec623529d47fa.svg",
     "static/media/Menu-Icon-svg.svg": "/static/media/Menu-Icon-svg.72abbff2ca3d5d1f926a.svg",
     "main.c01c6737.css.map": "/static/css/main.c01c6737.css.map",
-    "main.70664037.js.map": "/static/js/main.70664037.js.map"
+    "main.0c997042.js.map": "/static/js/main.0c997042.js.map"
   },
   "entrypoints": [
     "static/css/main.c01c6737.css",
-    "static/js/main.70664037.js"
+    "static/js/main.0c997042.js"
   ]
 }
