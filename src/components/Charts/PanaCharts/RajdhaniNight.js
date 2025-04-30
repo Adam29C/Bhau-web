@@ -4,7 +4,7 @@ import { fa_time } from "../../Helpers/getWeekDays";
 import { redJodi } from "../JodiCharts/Chart.config";
 const ShreeDevi = ({ chartData }) => {
   return (
-    <div>
+    <div className="d-flex justify-content-center">
        <table className="table fw-bold" border="collapse">
         <thead>
           <tr>

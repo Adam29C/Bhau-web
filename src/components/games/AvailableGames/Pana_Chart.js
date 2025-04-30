@@ -150,7 +150,7 @@ const Pana_Chart = () => {
                   nameRejext("RIDDHINIGHT") ? (
                   <RIDDHINIGHT chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("RIDDHIMORNING") ? (
+                  nameRejext("RIDDHIMORNING" ) ||  nameRejext("ridhimorning" ) ? (
                   <RIDDHIMORNING chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("SIDDHIDAY") ? (

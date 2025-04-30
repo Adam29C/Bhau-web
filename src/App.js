@@ -23,8 +23,8 @@ const App = () => {
         <Route path="/charts/" element={<Charts />} />
         <Route path="/starline/:title" element={<StartLineGames />} />
         <Route path="/andarbahar/:id" element={<AndarBaharChart />} />
-        <Route path="/pana-chart/:title/:Chart" element={<Pana_Chart />} />
-        <Route path="/jodi-chart/:title/:Chart" element={<Jodi_Chart />} />
+        <Route path="/pana-chart/:title" element={<Pana_Chart />} />
+        <Route path="/jodi-chart/:title" element={<Jodi_Chart />} />
         <Route path="/terms-conditions" element={<TermsCondition />} />
         <Route path="/how-to-play" element={<AboutGames />} />
       </Routes>

@@ -5,6 +5,8 @@ import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 const ShreeDay = ({ chartData }) => {
   const SIDDHIDAYs = extractTwoDigitNumbers(SIDDHIDAY);
 
+
+
   return (
     <div>
       <table className="table fw-bold" border="collapse">

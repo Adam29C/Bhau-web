@@ -4,9 +4,9 @@ const Charts_Container = ({ title, data, link, responsive_Class }) => {
     if (route === "jodi") {
       return `/jodi-chart/${name
         .toLowerCase()
-        .replace(/\s+/g, "")}/jodi-chart?`;
+        .replace(/\s+/g, "")}`;
     } else if (route === "pana") {
-      return `/pana-chart/${name.toLowerCase().replace(/\s+/g, "")}/pana-chart`;
+      return `/pana-chart/${name.toLowerCase().replace(/\s+/g, "")}`;
     } else if (route === "starline") {
       return `/starline/${name.toLowerCase().replace(/\s+/g, "")}`;
     } else if (route === "jackpot") {
