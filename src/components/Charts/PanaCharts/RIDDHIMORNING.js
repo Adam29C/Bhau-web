@@ -1,15 +1,14 @@
-import { RIDDHIMORNING} from "./Chart.config";
+import { RIDDHIMORNING } from "./Chart.config";
 
 import { redJodi } from "../JodiCharts/Chart.config";
 import { fa_time } from "../../Helpers/getWeekDays";
 
-const ShreeDevi = ({ chartData }) => {
+const Riddhi = ({ chartData }) => {
+  console.log("chartData", RIDDHIMORNING);
 
-  console.log("chartData" ,RIDDHIMORNING);
-  
   return (
     <div>
-       <table className="table fw-bold" border="collapse">
+      <table className="table fw-bold" border="collapse">
         <thead>
           <tr>
             <th className="cc">Date</th>
@@ -23,8 +22,7 @@ const ShreeDevi = ({ chartData }) => {
           </tr>
         </thead>
         <tbody>
-        {Object.entries(RIDDHIMORNING).map(([week, days], index) => {
-
+          {Object.entries(RIDDHIMORNING).map(([week, days], index) => {
             return (
               <tr key={index}>
                 <td className="cc td-width-13">
@@ -126,4 +124,4 @@ const ShreeDevi = ({ chartData }) => {
   );
 };
 
-export default ShreeDevi;
+export default Riddhi;

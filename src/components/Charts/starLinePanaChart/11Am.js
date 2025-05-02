@@ -2,6 +2,8 @@ import { Eleven } from "./Chart.config";
 import { redPana } from "../JodiCharts/Chart.config";
 
 const ShreeDevi = ({ chartData }) => {
+  console.log("chartData" ,chartData);
+
   return (
     <div>
       <table className="table fw-bold" border="collapse">

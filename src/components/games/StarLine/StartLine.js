@@ -24,11 +24,11 @@ const StartLine = () => {
     getResponseData();
   }, []);
 
-  const handleOpenCardModel =(row)=>{
-    setRowData(row.providerName.toUpperCase())
-    setModalData(row?.gameDetails?.[0])
+  const handleOpenCardModel = (row) => {
+    setRowData(row.providerName.toUpperCase());
+    setModalData(row?.gameDetails?.[0]);
     setShow(true);
-  }
+  };
 
   const showData = (data) => {
     const weekday = [
@@ -61,7 +61,6 @@ const StartLine = () => {
   return (
     <div>
       <div className="available-component">
-
         <div className="heding-sec heading-sec-custom m-2 d-flex text-center justify-content-center align-items-center">
           <img src={star} alt="" />
           <h1 className="mb-3 mt-3 ms-2 me-2 font-700">STARLINE</h1>
@@ -72,9 +71,12 @@ const StartLine = () => {
             {getData?.map((data, index) => (
               <div key={index} className="col-xl-4 col-lg-4 col-md-12 mb-3">
                 <div className="second-card">
-                <div className="second-card-image-main">
-                      <img src={cardImage} onClick={()=>handleOpenCardModel(data)}/>
-                    </div>
+                  <div className="second-card-image-main">
+                    <img
+                      src={cardImage}
+                      onClick={() => handleOpenCardModel(data)}
+                    />
+                  </div>
                   <div className="top-sec second-card-top-sec d-flex justify-content-between align-items-center">
                     <div className="card-text">
                       <div className="card-text-main set-margin">
@@ -118,23 +120,22 @@ const StartLine = () => {
                           downloadFile(showData(data?.gameDetails)?.message)
                         }
                       >
-
-{showData(data?.gameDetails)?.message ===
-                          "Close for today" ? (
-                            <img
-                              src="images/gameclose.png"
-                              className="play_icon_class "
-                              alt=""
-                              srcset=""
-                            />
-                          ) : (
-                            <img
-                              src="images/gameon.png"
-                              className="play_icon_class zoom-in-zoom-out"
-                              alt=""
-                              srcset=""
-                            />
-                          )}
+                        {showData(data?.gameDetails)?.message ===
+                        "Close for today" ? (
+                          <img
+                            src="images/gameclose.png"
+                            className="play_icon_class "
+                            alt=""
+                            srcset=""
+                          />
+                        ) : (
+                          <img
+                            src="images/gameon.png"
+                            className="play_icon_class zoom-in-zoom-out"
+                            alt=""
+                            srcset=""
+                          />
+                        )}
 
                         {/* <svg
                           id="video"
@@ -211,7 +212,7 @@ const StartLine = () => {
                       to={`/starline/${data?.providerName
                         .toLowerCase()
                         .replace(/\s+/g, "")}`}
-                        state={{ title: data?.providerName , id :data._id  }}
+                      state={{ title: data?.providerName, id: data._id }}
                       className="chat-btn"
                       style={{ textDecoration: "none" }}
                     >
@@ -240,12 +241,15 @@ const StartLine = () => {
             ))}
           </div>
         </div>
-        <CardModel ModalData={ModalData} setShow={setShow} show={show} title={RowData}/>
-
+        <CardModel
+          ModalData={ModalData}
+          setShow={setShow}
+          show={show}
+          title={RowData}
+        />
       </div>
     </div>
   );
 };
 
 export default StartLine;
-

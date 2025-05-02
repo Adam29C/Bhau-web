@@ -1,11 +1,10 @@
 import React from "react";
 import { redJodi } from "./Chart.config";
-import { SHREEGANESH } from "../PanaCharts/Chart.config";
+import { SHREEGANESH121 } from "../PanaCharts/Chart.config";
 import { extractTwoDigitNumbers } from "../../Helpers/MakeJodiChart";
 const ShreeDay = ({ chartData }) => {
-  const SHREEGANESHs = extractTwoDigitNumbers(SHREEGANESH);
-  // console.log("SHREEGANESHs", SHREEGANESHs);
-  console.log("SHREEGANESH", SHREEGANESH);
+  const SHREEGANESHs = extractTwoDigitNumbers(SHREEGANESH121);
+
 
   return (
     <div>

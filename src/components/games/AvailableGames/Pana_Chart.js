@@ -30,7 +30,7 @@ import SIDDHIDAY from "../../Charts/PanaCharts/SIDDHIDAY";
 import SIDDHIMORNING from "../../Charts/PanaCharts/SIDDHIMORNING";
 import SIDDHINIGHT from "../../Charts/PanaCharts/SIDDHINIGHT";
 
-import SHREEGANESH from "../../Charts/PanaCharts/SHREEGANESH";
+import SHREEGANESH122 from "../../Charts/PanaCharts/SHREEGANESH";
 
 import { GetAllCharts } from "../../Helpers/GetCharts";
 import { PagesIndex } from "../../Pages/PagesIndex";
@@ -150,7 +150,7 @@ const Pana_Chart = () => {
                   nameRejext("RIDDHINIGHT") ? (
                   <RIDDHINIGHT chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("RIDDHIMORNING" ) ||  nameRejext("ridhimorning" ) ? (
+                  nameRejext("ridhimorning") ? (
                   <RIDDHIMORNING chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("SIDDHIDAY") ? (
@@ -162,8 +162,8 @@ const Pana_Chart = () => {
                   nameRejext("SIDDHIMORNING") ? (
                   <SIDDHIMORNING chartData={getData.data} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("SHREEGANESH") ? (
-                  <SHREEGANESH chartData={getData.data} />
+                    nameRejext("SHREEGANESH") || nameRejext("shreeganesh") ? (
+                  <SHREEGANESH122 chartData={getData.data} />
                 ) : (
                   ""
                 )}

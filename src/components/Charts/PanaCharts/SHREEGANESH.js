@@ -1,6 +1,5 @@
-import { SHREEGANESH } from "./Chart.config";
+import { SHREEGANESH121 } from "./Chart.config";
 import { fa_time } from "../../Helpers/getWeekDays";
-
 import { redJodi } from "../JodiCharts/Chart.config";
 const ShreeDevi = ({ chartData }) => {
   return (
@@ -19,7 +18,7 @@ const ShreeDevi = ({ chartData }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(SHREEGANESH).map(([week, days], index) => {
+          {Object.entries(SHREEGANESH121).map(([week, days], index) => {
             let splitDate = week.split(" ");
 
             return (

@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 const Charts_Container = ({ title, data, link, responsive_Class }) => {
   const Details = (route, name) => {
     if (route === "jodi") {
-      return `/jodi-chart/${name
-        .toLowerCase()
-        .replace(/\s+/g, "")}`;
+      return `/jodi-chart/${name.toLowerCase().replace(/\s+/g, "")}`;
     } else if (route === "pana") {
       return `/pana-chart/${name.toLowerCase().replace(/\s+/g, "")}`;
     } else if (route === "starline") {
@@ -30,27 +28,24 @@ const Charts_Container = ({ title, data, link, responsive_Class }) => {
             <div className="shadow card rounded border-0 timetable">
               <div className="card-body" style={{ textAlign: "center" }}>
                 <h4 className="charts-border-left">
-                <Link
-                  to={
-                    title === "Starline"
-                      ? "/starline/allstarline"
-                      : "/andarbahar/alljackpot"
-                  }
-                  className="text-decoration-none primary-color"
-                  state={{
-                    title:
+                  <Link
+                    to={
                       title === "Starline"
-                        ? "allstarline"
-                        : "alljackpot",
-                  }}
-                >
-                  {/* {data1.providerName.toUpperCase()} */}
-                  {title === "Starline"
-                    ? "ALL STARLINE CHART"
-                    : "ALL JACKPOT CHART"}
-                </Link>
-              </h4>
-
+                        ? "/starline/allstarline"
+                        : "/andarbahar/alljackpot"
+                    }
+                    className="text-decoration-none primary-color"
+                    state={{
+                      title:
+                        title === "Starline" ? "allstarline" : "alljackpot",
+                    }}
+                  >
+                    {/* {data1.providerName.toUpperCase()} */}
+                    {title === "Starline"
+                      ? "ALL STARLINE CHART"
+                      : "ALL JACKPOT CHART"}
+                  </Link>
+                </h4>
               </div>
             </div>
           </>
@@ -62,6 +57,7 @@ const Charts_Container = ({ title, data, link, responsive_Class }) => {
           {data &&
             data?.map((data1, index) => (
               <>
+              
                 <div className="shadow card rounded border-0 timetable">
                   <div className="card-body" style={{ textAlign: "center" }}>
                     <h4 className="charts-border-left">

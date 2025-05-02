@@ -3177,7 +3177,7 @@ export const Nine = [
   ],
   [
     { id: 176, value: "93", color: "black" },
-    { id: 177, value: "**", color: "black" },
+    { id: 180, value: "55", color: "black" },
     { id: 178, value: "65", color: "black" },
     { id: 179, value: "53", color: "black" },
     { id: 180, value: "55", color: "black" },

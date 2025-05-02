@@ -49,7 +49,7 @@ const Charts = () => {
             <div className="row chart-row">
               <Jodi_Chart title="Jodi Chart" data={getChart} link="jodi" />
               <Pana_Chart title="Pana Chart" data={getChart} link="pana" />
-              {/* <Shree_Starline
+              <Shree_Starline
                 title="Starline"
                 data={getStarline}
                 link="starline"
@@ -58,7 +58,7 @@ const Charts = () => {
                 title="Jackpot"
                 data={getJackpot}
                 link="jackpot"
-              /> */}
+              />
             </div>
           )}
         </div>

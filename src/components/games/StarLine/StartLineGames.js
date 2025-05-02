@@ -23,7 +23,7 @@ import KalyanNight from "../../Charts/starLinePanaChart/11Am";
 
 import TimeBazar from "../../Charts/starLinePanaChart/9PM";
 import MainBazar from "../../Charts/starLinePanaChart/2PM";
-import AllStarline from "../../Charts/starLinePanaChart/AllStarline"
+import AllStarline from "../../Charts/starLinePanaChart/AllStarline";
 import { GetAllCharts } from "../../Helpers/GetCharts";
 
 const Pana_Chart = () => {
@@ -48,20 +48,20 @@ const Pana_Chart = () => {
   };
 
   const getResponseData = async () => {
-
-    
     if (location.state.title != "allstarline") {
-    // const req = location.state.id;
-    const req = location.state;
-
+      // const req = location.state.id;
+      const req = location.state;
 
       const res = await GetAllCharts(GET_ALL_STARLINE_GAME_PANA_CHART, req);
-      setgetData(res);
+
+      setgetData(res.data);
     }
   };
   useEffect(() => {
     getResponseData();
   }, []);
+
+  console.log("getDatagetDatagetData", getData);
 
   return (
     <>
@@ -74,7 +74,7 @@ const Pana_Chart = () => {
               <div className="pt-110 text-alignment">
                 <h2 className="chart-header-font color-white">
                   <strong>
-                  Starline &nbsp;
+                    Starline &nbsp;
                     {location.state.title}&nbsp; Chart
                   </strong>
                 </h2>
@@ -101,42 +101,43 @@ const Pana_Chart = () => {
             <div className="p-0 text-center d-flex justify-content-center   col-xl-12 col-q-12 col-md-12 col-sm-12  ">
               <div className="table-responsive  text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 ">
                 {nameRejext(location.state.title) === nameRejext("7:30PM") ? (
-                  <ShreeDay chartData={getData.data} />
+                  <ShreeDay chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("8:30PM") ? (
-                  <ShreeNight chartData={getData.data} />
+                  <ShreeNight chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("12:30PM") ? (
-                  <MadhurDay chartData={getData.data} />
+                  <MadhurDay chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("1:30PM") ? (
-                  <MadhurNight chartData={getData.data} />
+                  <MadhurNight chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("3:30PM") ? (
-                  <MilanDay chartData={getData.data} />
+                  <MilanDay chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("4:30PM") ? (
-                  <MilanNight chartData={getData.data} />
+                  <MilanNight chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("5:30PM") ? (
-                  <RajdhaniDay chartData={getData.data} />
+                  <RajdhaniDay chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("6:30PM") ? (
-                  <RajdhaniNight chartData={getData.data} />
+                  <RajdhaniNight chartData={getData} />
                 ) : nameRejext(location.state.title) ===
-                  nameRejext("10:30Am") ? (
-                  <Kalyan chartData={getData.data} />
+                  nameRejext("10:30AM") ? (
+                  <Kalyan chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("11:30Am") ? (
-                  <KalyanNight chartData={getData.data} />
+                  <KalyanNight chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("9:30PM") ? (
-                  <TimeBazar chartData={getData.data} />
+                  <TimeBazar chartData={getData} />
                 ) : nameRejext(location.state.title) ===
                   nameRejext("2:30PM") ? (
-                  <MainBazar chartData={getData.data} />
-                ): nameRejext(location.state.title) === nameRejext("allstarline") ? (
-                  <AllStarline chartData={getData.data} />
+                  <MainBazar chartData={getData} />
+                ) : nameRejext(location.state.title) ===
+                  nameRejext("allstarline") ? (
+                  <AllStarline chartData={getData} />
                 ) : (
                   ""
                 )}

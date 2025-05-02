@@ -3,6 +3,11 @@ import { redPana } from "../JodiCharts/Chart.config";
 
 const ShreeDevi = ({ chartData }) => {
 
+
+  console.log("chartData" ,chartData);
+  
+
+
   
   return (
     <div>
@@ -21,7 +26,10 @@ const ShreeDevi = ({ chartData }) => {
         </thead>
         <tbody>
         {Object.entries(Ten).map(([week, days], index) => (
-            <tr key={index}>
+
+
+          
+          <tr key={index}>
               <td className="cc td-width-13">
                 <div className="pana-chart-main">
                   <span className="result_date">{week}</span>

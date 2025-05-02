@@ -3,12 +3,9 @@ import { fa_time } from "./getWeekDays";
 
 export const GetAllCharts = async (apiEndPOint, data) => {
   const req = nameRejext(data.title);
-  
 
-  const res = await apiEndPOint({ name: req  , id :data.id});
+  const res = await apiEndPOint({ name: req, id: data.id });
 
-
-  
   if (res.status) {
     const convertedData = {
       data: [],
@@ -19,41 +16,45 @@ export const GetAllCharts = async (apiEndPOint, data) => {
     );
 
     res.data.forEach((weekData) => {
-      const resultDates = aa.map((item) => new Date(item.resultDate));
+      if (weekData.data.length > 0) {
+        const resultDates = aa.map((item) => new Date(item.resultDate));
 
-      const week = {
-        weekStartDay: fa_time(weekData.startDate),
-        weekEndDay: fa_time(weekData.endDate),
-        data: [],
-      };
+        
+        const week = {
+          weekStartDay: fa_time(weekData.startDate),
+          weekEndDay: fa_time(weekData.endDate),
+          data: [],
+        };
 
-      let currentResultDate = "";
-      let relatedData = [];
+        let currentResultDate = "";
+        let relatedData = [];
 
-
-      
-      weekData.data.forEach((item) => {
-        if (item.resultDate !== currentResultDate) {
-          if (currentResultDate !== "") {
-            week.data.push({
-              resultDate: currentResultDate,
-              relatedData: relatedData,
-            });
+        weekData.data.forEach((item) => {
+          if (item.resultDate !== currentResultDate) {
+            if (currentResultDate !== "") {
+              week.data.push({
+                resultDate: currentResultDate,
+                relatedData: relatedData,
+              });
+            }
+            currentResultDate = item.resultDate;
+            relatedData = [];
           }
-          currentResultDate = item.resultDate;
-          relatedData = [];
-        }
 
-        relatedData.push(item);
-      });
+          relatedData.push(item);
+        });
 
-      week.data.push({
-        resultDate: currentResultDate,
-        relatedData: relatedData,
-      });
+        week.data.push({
+          resultDate: currentResultDate,
+          relatedData: relatedData,
+        });
 
-      convertedData.data.push(week);
+        convertedData.data.push(week);
+      }
     });
+
+    console.log('convertedData' ,convertedData);
+    
 
     return convertedData;
   }
